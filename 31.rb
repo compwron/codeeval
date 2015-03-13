@@ -2,7 +2,8 @@ File.open(ARGV[0]).each_line do |line|
 	line.strip!
 	next if line.empty?
 	word, char = line.split(',')
-	p word.length - 1 - word.reverse.index(char)
+	i = word.reverse.index(char)
+	p i ? word.length - 1 - i : -1
 end
 
 
